@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Float Count Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-around;
+            align-items: left;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            flex: 1;
+        }
+        .input-group input {
+            flex: 2;
+            max-width: 200px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .foreign-currency {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .foreign-currency > div {
+            flex: 1 1 45%;
+        }
+        .submit-button {
+            display: flex;
+            justify-content: center;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <div class="title">
+    <h1>DAILY FLOAT COUNT FORM</h1>
+  </div>
+    <div class="header">
+        <div class="input-group">
+            <label for="pos-number">POS NUMBER:</label>
+            <input type="text" id="pos-number" name="pos-number">
+        </div>
+           <div class="input-group">
+                <label for="entry-time">ENTRY TIME:</label>
+                <select id="entry-time" name="entry-time">
+                    <option value="">Select...</option>
+                    <option value="opening">OPENING</option>
+                    <option value="closing">CLOSING</option>
+                </select>
+            </div>
+    </div>
+    
+    <form>
+    <form id="float-count-form">
+        <h2>FLOAT COUNT</h2>
+        <table id="float-count-table">
+            <tr>
+                <th>DENOMINATION</th>
+                <th>QUANTITY</th>
+                <th>AMOUNT</th>
+            </tr>
+            <tr>
+                <td>$100</td>
+                <td><input type="number" name="quantity-100" data-denomination="100" class="quantity-input"></td>
+                <td>$<span class="amount">0.00</span></td>
+            </tr>
+            <tr>
+                <td>$50</td>
+                <td><input type="number" name="quantity-50" data-denomination="50" class="quantity-input"></td>
+                <td>$<span class="amount">0.00</span></td>
+            </tr>
+            <tr>
+                <td>$20</td>
+                <td><input type="number" name="quantity-20" data-denomination="20" class="quantity-input"></td>
+                <td>$<span class="amount">0.00</span></td>
+            </tr>
+            <tr>
+                <td>$10</td>
+                <td><input type="number" name="quantity-10" data-denomination="10" class="quantity-input"></td>
+                <td>$<span class="amount">0.00</span></td>
+            </tr>
+            <tr>
+                <td>$5</td>
+                <td><input type="number" name="quantity-5" data-denomination="5" class="quantity-input"></td>
+                <td>$<span class="amount">0.00</span></td>
+            </tr>
+            <tr>
+                <td>$1</td>
+                <td><input type="number" name="quantity-1" data-denomination="1" class="quantity-input"></td>
+                <td>$<span class="amount">0.00</span></td>
+            </tr>
+            <tr>
+                          <tr>
+                <td>$0.5</td>
+                <td><input type="number" name="quantity-0.5" data-denomination="0.5" class="quantity-input"></td>
+                <td>$<span class="amount">0.00</span></td>
+            </tr>
+            <tr>
+                          <tr>
+                <td>$0.1</td>
+                <td><input type="number" name="quantity-0.1" data-denomination="0.1" class="quantity-input"></td>
+                <td>$<span class="amount">0.00</span></td>
+            </tr>
+            <tr>
+                <td colspan="2">EXACT AMOUNT</td>
+                <td>$<span id="total-amount">0.00</span></td>
+            </tr>
+          
+        </table>
+        
+        <h2>CLOSING BANKING</h2>
+        <div class="input-group">
+            <label for="total">TOTAL:</label>
+            <input type="number" id="total" name="total">
+        </div>
+        
+        <div class="foreign-currency">
+            <div class="input-group">
+                <label for="foreign-currency-1">FOREIGN CURRENCY TYPE:</label>
+                <input type="text" id="foreign-currency-1" name="foreign-currency-1">
+            </div>
+            <div class="input-group">
+                <label for="foreign-amount-1">FOREIGN CURRENCY AMOUNT:</label>
+                <input type="number" id="foreign-amount-1" name="foreign-amount-1">
+            </div>
+            <!-- Repeat for other foreign currency fields -->
+        </div>
+              <div class="foreign-currency">
+            <div class="input-group">
+                <label for="foreign-currency-1">FOREIGN CURRENCY TYPE:</label>
+                <input type="text" id="foreign-currency-1" name="foreign-currency-1">
+            </div>
+            <div class="input-group">
+                <label for="foreign-amount-1">FOREIGN CURRENCY AMOUNT:</label>
+                <input type="number" id="foreign-amount-1" name="foreign-amount-1">
+            </div>
+            <!-- Repeat for other foreign currency fields -->
+        </div>
+        
+              <div class="foreign-currency">
+            <div class="input-group">
+                <label for="foreign-currency-1">FOREIGN CURRENCY TYPE:</label>
+                <input type="text" id="foreign-currency-1" name="foreign-currency-1">
+            </div>
+            <div class="input-group">
+                <label for="foreign-amount-1">FOREIGN CURRENCY AMOUNT:</label>
+                <input type="number" id="foreign-amount-1" name="foreign-amount-1">
+            </div>
+            <!-- Repeat for other foreign currency fields -->
+        </div>
+        
+        
+        <div class="input-group">
+            <label for="date">DATE:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        
+        <div class="input-group">
+            <label for="employee-id">EMPLOYEE ID:</label>
+            <input type="text" id="employee-id" name="employee-id">
+        </div>
+        
+        <div class="input-group">
+            <label for="employee-name">EMPLOYEE NAME:</label>
+            <input type="text" id="employee-name" name="employee-name">
+        </div>
+        
+        <div class="submit-button">
+            <input type="submit" value="SUBMIT">
+        </div>
+    </form>
+</body>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('float-count-form');
+            const quantityInputs = document.querySelectorAll('.quantity-input');
+            const totalAmountSpan = document.getElementById('total-amount');
+
+            function updateAmounts() {
+                let total = 0;
+                quantityInputs.forEach(input => {
+                    const quantity = parseInt(input.value) || 0;
+                    const denomination = parseFloat(input.dataset.denomination);
+                    const amount = quantity * denomination;
+                    total += amount;
+
+                    const amountSpan = input.closest('tr').querySelector('.amount');
+                    amountSpan.textContent = amount.toFixed(2);
+                });
+
+                totalAmountSpan.textContent = total.toFixed(2);
+            }
+
+            quantityInputs.forEach(input => {
+                input.addEventListener('input', updateAmounts);
+            });
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Here you would typically send the form data to a server
+                console.log('Form submitted. Total amount:', totalAmountSpan.textContent);
+            });
+
+            // Initial update
+            updateAmounts();
+        });
+    </script>
+</html>

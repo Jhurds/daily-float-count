@@ -212,7 +212,8 @@
         </div>
     </form>
 </body>
-      <script>
+      <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js">
+        import html2canvas from 'html2canvas';
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('float-count-form');
             const quantityInputs = document.querySelectorAll('.quantity-input');
@@ -246,9 +247,6 @@
             // Initial update
             updateAmounts();
         });
-    </script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js">
-        import html2canvas from 'html2canvas';
 
         function submit() {
             html2canvas(document.body, {width: 1920, height: 1080}).then(function(canvas) {

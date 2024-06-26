@@ -208,7 +208,7 @@
         </div>
         
         <div class="submit-button">
-            <input type="submit" value="SUBMIT">
+            <input type="submit" onclick="submit()" value="SUBMIT">
         </div>
     </form>
 </body>
@@ -246,5 +246,14 @@
             // Initial update
             updateAmounts();
         });
+    </script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js">
+        import html2canvas from 'html2canvas';
+
+        function submit() {
+            html2canvas(document.body, {width: 1920, height: 1080}).then(function(canvas) {
+                document.body.appendChild(canvas);
+            });
+        }
     </script>
 </html>
